@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Live Auction | CurioVault #169611</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="brand-logo">
+        <span class="logo-icon">🏛️</span>
+        <span class="logo-text">CurioVault <small>#169611</small></span>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html">Catalog</a>
+        <a href="seller-portal.html">Consignment</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="catalog-section">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; background: var(--card-bg); padding: 2rem; border-radius: 6px; border: 1px solid var(--border-color);">
+      <div>
+        <div style="width: 100%; height: 280px; background: #23232e; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 4rem;">⏱️</div>
+      </div>
+      <div>
+        <span class="card-badge">Horology • Lot #101</span>
+        <h2 style="color: var(--gold-accent); margin: 0.5rem 0;">1920s Omega Pocket Watch</h2>
+        <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Authentic 18k gold filled casing, fully restored mechanical movement with origin certificates.</p>
+
+        <div style="background: var(--bg-dark); padding: 1rem; border-radius: 4px; margin-bottom: 1.5rem;">
+          <div style="font-size: 0.85rem; color: var(--text-muted);">Auction Ends In:</div>
+          <div id="timer" style="font-size: 1.5rem; font-weight: 700; color: #ff6b6b;">04m 59s</div>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+          <div>
+            <span style="font-size: 0.85rem; color: var(--text-muted);">Current Highest Bid</span>
+            <div id="live-bid-display" style="font-size: 2rem; font-weight: 700; color: var(--gold-accent);">$1,450</div>
+          </div>
+          <span id="bid-count" style="font-size: 0.85rem; color: var(--text-muted);">8 Bids Placed</span>
+        </div>
+
+        <button class="btn btn-primary" style="width: 100%;" onclick="triggerBid()">Place $25 Increment Bid</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/bidding.js"></script>
+</body>
+</html>
