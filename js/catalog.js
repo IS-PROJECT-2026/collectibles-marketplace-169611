@@ -74,17 +74,12 @@ function renderCatalog(items) {
 }
 
 // Filter Logic
-function filterCatalog() {
-  const selectedCategory = categoryFilter.value;
-  const selectedEra = eraFilter.value;
-
-  const filtered = catalogData.filter(item => {
-    const matchesCategory = selectedCategory === "all" || item.category === selectedCategory;
-    const matchesEra = selectedEra === "all" || item.era === selectedEra;
-    return matchesCategory && matchesEra;
-  });
-
-  renderCatalog(filtered);
+// js/catalog.js
+function filterCatalog(items, tagQuery) {
+  if (!tagQuery) return items;
+  return items.filter(item => 
+    item.tags && item.tags.includes(tagQuery.toLowerCase())
+  );
 }
 
 // Interactive Bid Simulator
@@ -121,6 +116,22 @@ const catalogData = [
     currentBid: 350,
     bidsCount: 4
   },
-  // ... existing items below
-
-]
+  {
+    id: 99,
+    title: "1952 Topps Mickey Mantle Card",
+    category: "Sports",
+    era: "Mid-Century",
+    estYear: 1952,
+    currentBid: 1200,
+    bidsCount: 15
+  },
+  {
+    id: 101,
+    title: "1920s Omega Pocket Watch",
+    category: "Horology",
+    era: "Art Deco",
+    estYear: 1924,
+    currentBid: 1450,
+    bidsCount: 8
+  }
+];
