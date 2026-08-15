@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Consignment Portal | CurioVault #169611</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="brand-logo">
+        <span class="logo-icon">🏛️</span>
+        <span class="logo-text">CurioVault <small>#169611</small></span>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html">Catalog</a>
+        <a href="seller-portal.html" style="color: var(--gold-accent)">Consignment</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="catalog-section" style="max-width: 700px;">
+    <h2 style="color: var(--gold-accent); margin-bottom: 0.5rem;">Submit Collectible for Appraisal</h2>
+    <p style="color: var(--text-muted); margin-bottom: 2rem;">Fill in item provenance details for our dealer review team.</p>
+
+    <form id="consignment-form" style="background: var(--card-bg); padding: 2rem; border-radius: 6px; border: 1px solid var(--border-color);" onsubmit="handleConsignmentSubmit(event)">
+      <div style="margin-bottom: 1.2rem;">
+        <label style="display: block; color: var(--text-muted); margin-bottom: 0.4rem;">Item Title</label>
+        <input type="text" required placeholder="e.g., 18th Century Silver Tea Set" style="width: 100%; padding: 0.6rem; background: var(--bg-dark); border: 1px solid var(--border-color); color: #fff; border-radius: 4px;" />
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.2rem;">
+        <div>
+          <label style="display: block; color: var(--text-muted); margin-bottom: 0.4rem;">Category</label>
+          <select style="width: 100%; padding: 0.6rem; background: var(--bg-dark); border: 1px solid var(--border-color); color: #fff; border-radius: 4px;">
+            <option>Numismatics</option>
+            <option>Horology</option>
+            <option>Fine Art</option>
+            <option>Sports</option>
+          </select>
+        </div>
+        <div>
+          <label style="display: block; color: var(--text-muted); margin-bottom: 0.4rem;">Estimated Era</label>
+          <select style="width: 100%; padding: 0.6rem; background: var(--bg-dark); border: 1px solid var(--border-color); color: #fff; border-radius: 4px;">
+            <option>Victorian</option>
+            <option>Art Deco</option>
+            <option>Mid-Century</option>
+          </select>
+        </div>
+      </div>
+
+      <div style="margin-bottom: 1.2rem;">
+        <label style="display: block; color: var(--text-muted); margin-bottom: 0.4rem;">Reserve Price ($)</label>
+        <input type="number" min="50" placeholder="500" required style="width: 100%; padding: 0.6rem; background: var(--bg-dark); border: 1px solid var(--border-color); color: #fff; border-radius: 4px;" />
+      </div>
+
+      <div style="margin-bottom: 1.5rem;">
+        <label style="display: block; color: var(--text-muted); margin-bottom: 0.4rem;">Provenance & Condition</label>
+        <textarea rows="4" placeholder="Detail item history, hallmarks, and condition..." style="width: 100%; padding: 0.6rem; background: var(--bg-dark); border: 1px solid var(--border-color); color: #fff; border-radius: 4px;"></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Consignment Application</button>
+    </form>
+    <div id="form-feedback" style="display: none; margin-top: 1rem; padding: 1rem; background: #1e3a29; border: 1px solid #2e6b40; color: #8ce1a6; border-radius: 4px;">Application submitted successfully! Our appraisal desk will contact you within 48 hours.</div>
+  </main>
+
+  <script>
+    function handleConsignmentSubmit(e) {
+      e.preventDefault();
+      document.getElementById('consignment-form').reset();
+      document.getElementById('form-feedback').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
