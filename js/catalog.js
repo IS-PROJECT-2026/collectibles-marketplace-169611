@@ -110,3 +110,16 @@ eraFilter.addEventListener("change", filterCatalog);
 document.addEventListener("DOMContentLoaded", () => {
   renderCatalog(catalogData);
 });
+
+const catalogData = [
+  {
+    id: 99,
+    title: "1952 Topps Mickey Mantle Card",
+    category: "Sports",
+    era: "Mid-Century",
+    estYear: 1952,
+    currentBid: 1200,
+    bidsCount: 15
+  },
+  // ... existing items below
+]
