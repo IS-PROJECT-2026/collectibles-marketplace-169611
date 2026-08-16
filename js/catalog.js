@@ -75,13 +75,13 @@ function renderCatalog(items) {
 
 // Filter Logic
 // js/catalog.js
-function filterCatalog(items, tagQuery) {
-  if (!tagQuery) return items;
-  return items.filter(item => 
-    item.tags && item.tags.includes(tagQuery.toLowerCase())
-  );
+function filterCatalog(items, { tag = null, minPrice = 0, maxPrice = Infinity } = {}) {
+  return items.filter(item => {
+    const matchesTag = !tag || (item.tags && item.tags.includes(tag.toLowerCase()));
+    const matchesPrice = item.price >= minPrice && item.price <= maxPrice;
+    return matchesTag && matchesPrice;
+  });
 }
-
 // Interactive Bid Simulator
 function placeBid(itemId) {
   const item = catalogData.find(i => i.id === itemId);
